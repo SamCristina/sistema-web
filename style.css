@@ -6,6 +6,13 @@
   padding: 0;
   margin:0 ;
 }
+:root {
+  --azul-mais-escuro: #011858;
+  --roxo-medio: #a786c4;
+  --bege: #e6e1c9;
+  --marrom: #8d6f62;
+  --branco: #FFFFFF;
+}
 body {
   font-family: "Pixelify Sans", sans-serif;
   padding-left: 50px;
@@ -31,10 +38,10 @@ li{
 }
 a{
   text-decoration: none;
-  color: white;
+  color: var(--branco);
 }
 .botao-secundario{
-  border: 2px solid white;
+  border: 2px solid var(--branco);
   border-radius: 5px;
 }
 img{
@@ -58,7 +65,7 @@ h1 {
   font-weight: 300;
 }
 .botao-primario {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--branco);
   color: rgb(8, 3, 56);
   font-size: 28px;
   border-radius: 10px;
