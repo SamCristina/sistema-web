@@ -1,13 +1,11 @@
-@import url('<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">);
+
    
 :root {
-  --roxo-mais-escuro: #f5f5f5;
-  --roxo-medio: #ecc6de;
-  --roxo-mais-claro: #E0AAFF;
+  --roxo-mais-escuro: #000000;
+  --roxo-medio: #000000;
+  --roxo-mais-claro: #030103;
   --preto: #000000;
-  --branco: #FFFFFF;
+  --branco: #8c868f;
 }
 
 * {
@@ -66,21 +64,23 @@ a {
   opacity: 70%;
 }
 
-.header {
+.corpo {
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  align-items: center;
-  width: fit-content;
   padding: 80px;
+  color: #ffffff;
+  background-color: var(--branco);
 }
 
-.header img {
+.corpo img {
   width: auto;
 }
 
-.esquerda {
+.corpo .esquerda {
   width: 35%;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: 30px;
 }
@@ -92,12 +92,12 @@ h1 {
   line-height: 110%;
 }
 
-.esquerda p {
+.corpo .esquerda p {
   font-size: 18px;
   line-height: 130%;
 }
 
-.esquerda .botao-primario {
+.corpo .esquerda .botao-primario {
   font-size: 22px;
   font-weight: bold;
   padding: 10px 50px;
@@ -212,7 +212,7 @@ h3 {
 }
 
 #sobre-nos .esquerda img {
-  width: 600px;
+  width: 500px;
 }
 
 #sobre-nos .direita {
@@ -268,4 +268,184 @@ footer li:hover {
   display: flex;
   justify-content: space-around;
   font-size: 22px;
+}
+.botao-menu {
+  display: none;
+}
+
+
+.botao-menu-close {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .corpo {
+    flex-direction: column;
+  }
+
+  .corpo img {
+    width: 100%;
+  }
+
+  .menu-lateral {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: -250px; /* Esconde o menu fora da tela */
+      width: 250px;
+      height: 100%;
+      background-color: var(--roxo-medio); /* Cor de fundo do menu */
+      transition: left 0.3s ease;
+      z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+      flex-direction: column;
+      color: var(--branco);
+  }
+
+  .botao-menu-close {
+      display: none;
+  }
+
+  .menu-lateral.aberto {
+      left: 0;
+  }
+
+  .menu-lateral.aberto .botao-menu-close {
+      display: block;
+  }
+
+  .menu-lateral ul {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      padding: 20px;
+  }
+
+  .menu-lateral ul li {
+      margin-bottom: 10px;
+  }
+
+  .menu-lateral ul li a {
+      color: var(--branco);
+      text-decoration: none;
+      font-size: 18px;
+  }
+
+  .botao-primario {
+      display: none;
+  }
+
+  .botao-menu {
+      display: block;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      border: none;
+      color: var(--roxo-mais-escuro);
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 999; /* Garante que o botão esteja acima do menu */
+  }
+
+  .menu-lateral ul {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      text-align: left;
+  }
+
+  .topo img {
+      display: none;
+  }
+
+  #inicio {
+      flex-direction: column-reverse;
+      text-align: center;
+      height: auto;
+  }
+
+  #inicio .esquerda {
+      align-items: center;
+  }
+
+  #inicio .esquerda, .direita {
+      width: 100%;
+  }
+
+  #inicio .direita img {
+      width: 50%;
+  }
+
+  h2 {
+      font-weight: bold;
+      font-size: 36px;
+      text-align: center;
+  }
+
+  h3 {
+      font-weight: normal;
+      font-size: 18px;
+  }
+
+  #produtos {
+      padding: 0;
+  }
+
+  .produtos {
+      justify-content: space-around;
+      padding-top: 26px;
+      flex-direction: column;
+  }
+
+  .produto {
+      gap: 16px;
+      padding-top: 20px;
+  }
+
+  #beneficios {
+      padding: 30px 0;
+      gap: 50px;
+  }
+
+  .beneficios {
+      padding: 0 100px;
+      display: flex;
+      gap: 60px;
+
+  }
+
+  .beneficios {
+      flex-direction: column;
+  }
+
+  #sobre-nos {
+      flex-direction: column;
+      padding: 20px 50px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+  }
+
+  #sobre-nos .esquerda h2, p{
+      width: auto;
+  }
+
+  #sobre-nos .esquerda img {
+      width: 400px;
+  }
+
+  #sobre-nos .direita {
+      width: auto;
+  }
+
+  footer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  footer ul {
+      text-align: start;
+  }
 }
